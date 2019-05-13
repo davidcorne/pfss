@@ -1,6 +1,6 @@
 import os
-from local_settings import *
 
+SECRET_KEY=os.environ["SITE_SECRET_KEY"]
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
