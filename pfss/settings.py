@@ -7,7 +7,6 @@ PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = PACKAGE_ROOT
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     "default": {
@@ -16,7 +15,10 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['summoner-scribe.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    'summoner-scribe.herokuapp.com'
+    ]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -75,21 +77,6 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = [
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.core.context_processors.request",
-    "django.contrib.messages.context_processors.messages",
-    "account.context_processors.account",
-    "pinax_theme_bootstrap.context_processors.theme",
-    "pfss.context_processors.site_wide_context",
-]
-
-
 MIDDLEWARE_CLASSES = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -113,20 +100,22 @@ TEMPLATES = [
         ],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': DEBUG,
             'context_processors': [
-                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
-                # list if you haven't customized them:
-                'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.debug',
-                'django.template.context_processors.i18n',
-                'django.template.context_processors.media',
-                'django.template.context_processors.static',
-                'django.template.context_processors.tz',
-                'django.contrib.messages.context_processors.messages',
-    "account.context_processors.account",
-    "pinax_theme_bootstrap.context_processors.theme",
-    "pfss.context_processors.site_wide_context",
-
+                "django.contrib.auth.context_processors.auth",
+                "django.core.context_processors.debug",
+                "django.core.context_processors.i18n",
+                "django.core.context_processors.media",
+                "django.core.context_processors.static",
+                "django.core.context_processors.tz",
+                "django.core.context_processors.request",
+                "django.contrib.messages.context_processors.messages",
+                "account.context_processors.account",
+                "pinax_theme_bootstrap.context_processors.theme",
+                "pfss.context_processors.site_wide_context",
+                "account.context_processors.account",
+                "pinax_theme_bootstrap.context_processors.theme",
+                "pfss.context_processors.site_wide_context",
             ],
         },
     },
